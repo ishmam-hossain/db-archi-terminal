@@ -102,3 +102,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+.idea
+example.db
+run_test.py
+run.py
