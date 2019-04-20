@@ -1,7 +1,8 @@
 import pymongo
 import sqlite3
 from typing import NewType, Union
-from mongo_handler import mongodb_collection_details, mongodb_collection_names, mongodb_one_collection_fields, mongodb_client_details
+from mongo_handler import mongodb_collection_details, mongodb_collection_names,\
+    mongodb_one_collection_fields, mongodb_client_details
 from sqlite3_handler import sqlite3_tables
 
 
