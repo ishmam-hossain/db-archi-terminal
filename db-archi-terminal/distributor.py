@@ -29,7 +29,6 @@ def fetch_data(db_instance: Union[mongodb_instance,
     if related_method:
         data = related_method(db_instance, _fields=_fields)
         return data
-
     return
 
 

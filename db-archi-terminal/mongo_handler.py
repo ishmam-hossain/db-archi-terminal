@@ -8,10 +8,7 @@ def mongodb_collection_details(_db, _fields=False):
         collections = mongodb_collection_names(_db)
         data = {}
         for collection in collections:
-            cursor = _db[collection].find({})
-            for document in cursor:
-                data[collection] = [key for key in document.keys()]
-                break
+            data[collection] = mongodb_one_collection_fields(_db[collection])
 
         return data
 
@@ -20,9 +17,10 @@ def mongodb_collection_details(_db, _fields=False):
 
 def mongodb_one_collection_fields(_collection_instance, _fields=False):
     cursor = _collection_instance.find_one()
-    field_names = [key for key in cursor]
-
-    return field_names
+    if cursor:
+        field_names = [key for key in cursor]
+        return field_names
+    return
 
 
 def mongodb_client_details(_mongodb_client, _fields=False):
